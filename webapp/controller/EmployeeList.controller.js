@@ -9,13 +9,13 @@ sap.ui.define([
 
         onSelectEmployee: function (oEvent) {
 
-           var oItem = oEvent.getParameter("listItem");
+           let oItem = oEvent.getParameter("listItem");
 
         if (!oItem) {
             oItem = oEvent.getParameter("item");
         }
 
-            var sEmpId = oItem.getBindingContext().getProperty("id");
+            let sEmpId = oItem.getBindingContext().getProperty("id");
 
             this.getOwnerComponent()
                 .getRouter()
@@ -26,13 +26,13 @@ sap.ui.define([
 
         onSearch: function (oEvent) {
 
-            var sValue = oEvent.getParameter("newValue");
+            let sValue = oEvent.getParameter("newValue");
 
-            var oList = this.byId("employeeList");
+            let oList = this.byId("employeeList");
 
-            var oBinding = oList.getBinding("items");
+            let oBinding = oList.getBinding("items");
 
-            var aFilter = [];
+            let aFilter = [];
 
             if (sValue) {
 

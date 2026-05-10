@@ -1,9 +1,9 @@
 sap.ui.define([], function () {
     "use strict";
 
-    var aEmployees = [];
+    let aEmployees = [];
 
-    for (var i = 1; i <= 100; i++) {
+    for (let i = 1; i <= 100; i++) {
 
         aEmployees.push({
 

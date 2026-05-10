@@ -16,17 +16,17 @@ sap.ui.define([
 
         _onObjectMatched: function (oEvent) {
 
-            var sEmpId = oEvent.getParameter("arguments").empId;
+            let sEmpId = oEvent.getParameter("arguments").empId;
 
-            var aEmployees = this.getView()
+            let aEmployees = this.getView()
                 .getModel()
                 .getProperty("/employees");
 
-            for (var i = 0; i < aEmployees.length; i++) {
+            for (let i = 0; i < aEmployees.length; i++) {
 
                 if (aEmployees[i].id === sEmpId) {
 
-                    var sPath = "/employees/" + i;
+                    let sPath = "/employees/" + i;
 
                     this.getView().bindElement(sPath);
 

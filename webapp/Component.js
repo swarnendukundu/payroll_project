@@ -15,7 +15,7 @@ sap.ui.define([
 
             UIComponent.prototype.init.apply(this, arguments);
 
-            var oModel = new JSONModel();
+            let oModel = new JSONModel();
 /*
             oModel.loadData(
                 "localService/mockdata/mockdata100.js"
