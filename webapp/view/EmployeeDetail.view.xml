@@ -1,0 +1,194 @@
+<mvc:View
+    controllerName="payroll.controller.EmployeeDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="Payroll Details"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+
+        <VBox class="sapUiMediumMargin" width="100%">
+
+            <!-- Employee Header -->
+            <!-- Employee Header with Avatar -->
+            <HBox
+                alignItems="Center"
+                class="sapUiMediumMarginBottom">
+
+                <!-- Avatar -->
+                <Avatar
+                    displaySize="L"
+                    initials="{= ${name}.split(' ')[0].charAt(0) + ${name}.split(' ')[1].charAt(0) }"
+                    class="sapUiMediumMarginEnd" />
+
+                <!-- Employee Info -->
+                <VBox>
+
+                    <Title
+                        text="{name}"
+                        level="H2" />
+
+                    <ObjectStatus
+                        text="{netSalary} INR"
+                        state="Success" />
+
+                </VBox>
+
+            </HBox>
+
+            <!-- Employee Information -->
+            <Panel
+                headerText="Employee Information"
+                expandable="true"
+                expanded="true"
+                class="sapUiMediumMarginTop">
+
+                <VBox class="sapUiSmallMargin">
+
+                    <ObjectAttribute
+                        title="Employee ID"
+                        text="{id}" />
+
+                    <ObjectAttribute
+                        title="Department"
+                        text="{department}" />
+
+                    <ObjectAttribute
+                        title="Designation"
+                        text="{designation}" />
+
+                    <ObjectAttribute
+                        title="Payment Status"
+                        text="{paymentStatus}" />
+                    <ObjectAttribute
+                        title="Payment Date"
+                        text="{date}" />
+
+                </VBox>
+
+            </Panel>
+
+            <!-- Earnings Panel -->
+            <!-- Earnings Panel -->
+            <!-- Earnings Panel -->
+            <Panel
+                headerText="Earnings"
+                expandable="true"
+                expanded="true"
+                class="sapUiMediumMarginTop">
+
+                <VBox class="sapUiSmallMargin">
+
+                    <ObjectListItem
+                        title="Basic Salary"
+                        number="{basic}"
+                        numberUnit="INR" />
+
+                    <ObjectListItem
+                        title="HRA"
+                        number="{hra}"
+                        numberUnit="INR" />
+
+                    <ObjectListItem
+                        title="Bonus"
+                        number="{bonus}"
+                        numberUnit="INR" />
+
+                    <!-- Gross Salary -->
+                    <HBox
+                        justifyContent="SpaceBetween"
+                        class="sapUiSmallMarginTop">
+
+                        <Text
+                            text="Gross Salary"
+                            design="Bold" />
+
+                        <ObjectStatus
+                            text="{= Number(${basic}) + Number(${hra}) + Number(${bonus}) + ' INR'}"
+                            state="Information" />
+
+                    </HBox>
+
+                    <!-- Net Salary -->
+                    <HBox
+                        justifyContent="SpaceBetween"
+                        class="sapUiSmallMarginTop">
+
+                        <Text
+                            text="Net Salary"
+                            design="Bold" />
+
+                        <ObjectStatus
+                            text="{netSalary} INR"
+                            state="Success" />
+
+                    </HBox>
+
+                </VBox>
+
+            </Panel>
+            <!-- Deductions Panel -->
+            <!-- Deductions Panel -->
+            <Panel
+                headerText="Tax and Deductions"
+                expandable="true"
+                expanded="true"
+                class="sapUiMediumMarginTop">
+
+                <VBox class="sapUiSmallMargin">
+
+                    <HBox
+                        justifyContent="SpaceBetween"
+                        alignItems="Center"
+                        class="sapUiSmallMarginTop">
+
+                        <!-- Left Side -->
+                        <HBox alignItems="Center">
+
+                            <Text
+                                text="Provident Fund (PF)"
+                                class="sapUiTinyMarginEnd" />
+
+                            <!-- Info Icon -->
+                            <Button
+                                icon="sap-icon://hint"
+                                type="Transparent"
+                                tooltip="PF deducted as employee contribution"
+                                press="onPFInfoPress" />
+
+                        </HBox>
+
+                        <!-- PF Amount -->
+                        <Text text="{pf} INR" />
+
+                    </HBox>
+
+                    <ObjectListItem
+                        title="Professional Tax"
+                        number="{tax}"
+                        numberUnit="INR" />
+
+                    <!-- Total Deduction in Red -->
+                    <HBox
+                        justifyContent="SpaceBetween"
+                        class="sapUiSmallMarginTop">
+
+                        <Text
+                            text="Total Deduction"
+                            design="Bold" />
+
+                        <ObjectStatus
+                            text="{totalDeduction} INR"
+                            state="Error" />
+
+                    </HBox>
+
+                </VBox>
+
+            </Panel>
+
+        </VBox>
+
+    </Page>
+</mvc:View>

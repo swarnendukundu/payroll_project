@@ -1,0 +1,58 @@
+{
+  "employees": [
+    {
+      "id": "EMP1001",
+      "name": "Rahul Sharma",
+      "department": "Finance",
+      "designation": "Accountant",
+      "paymentStatus": "Paid",
+      "date":"20-05-2026",
+
+      "basic": "40000",
+      "hra": "10000",
+      "bonus": "5000",
+
+      "pf": "1200",
+      "tax": "2500",
+      "totalDeduction": "3700",
+
+      "netSalary": "50700"
+    },
+    {
+      "id": "EMP1002",
+      "name": "Anjali Verma",
+      "department": "HR",
+      "designation": "HR Manager",
+      "paymentStatus": "Pending",
+      "date":"null",
+
+      "basic": "55000",
+      "hra": "12000",
+      "bonus": "8500",
+
+      "pf": "2200",
+      "tax": "3500",
+      "totalDeduction": "5700",
+
+      "netSalary": "69800"
+    },
+    {
+      "id": "EMP1003",
+      "name": "Vikram Singh",
+      "department": "IT",
+      "designation": "SAP UI5 Consultant",
+      "paymentStatus": "Paid",
+      "date":"20-05-2026",
+
+      "basic": "70000",
+      "hra": "15000",
+      "bonus": "12000",
+
+      "pf": "3000",
+      "tax": "5000",
+      "totalDeduction": "8000",
+
+      "netSalary": "89000"
+    }
+  ]
+}
