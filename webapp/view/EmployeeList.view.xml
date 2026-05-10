@@ -1,0 +1,38 @@
+<mvc:View
+    controllerName="payroll.controller.EmployeeList"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page title="Employee Payroll List">
+
+        <content>
+
+            <!-- Search Field -->
+            <SearchField
+                width="100%"
+                placeholder="Search Employee"
+                liveChange="onSearch"
+                class="sapUiSmallMargin" />
+
+            <!-- Employee List -->
+            <List
+                id="employeeList"
+                items="{/employees}"
+                mode="SingleSelectMaster"
+                selectionChange="onSelectEmployee"
+                growing="true"
+                growingThreshold="5"
+                growingScrollToLoad="true">
+
+                <StandardListItem
+                    title="{name}"
+                    description="Employee ID: {id}"
+                    info="{department}"
+                    type="Navigation" />
+
+            </List>
+
+        </content>
+
+    </Page>
+</mvc:View>

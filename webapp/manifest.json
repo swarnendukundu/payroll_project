@@ -1,0 +1,52 @@
+{
+  "sap.app": {
+    "id": "payroll",
+    "type": "application",
+    "title": "Payroll App"
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "payroll.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "payroll.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "employeeList",
+          "target": "employeeList"
+        },
+        {
+          "pattern": "employee/{empId}",
+          "name": "employeeDetail",
+          "target": "employeeDetail"
+        }
+      ],
+      "targets": {
+        "employeeList": {
+          "viewName": "EmployeeList"
+        },
+        "employeeDetail": {
+          "viewName": "EmployeeDetail"
+        }
+      }
+    }
+  }
+}
