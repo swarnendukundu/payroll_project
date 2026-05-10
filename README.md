@@ -1,3 +1,3 @@
-Payroll Project SAP UI5
-npm install
-npm start
+Payroll Project SAP UI5: 
+1. npm install
+2. npm start
